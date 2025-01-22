@@ -175,7 +175,7 @@ create_repository() {
     git push -u origin main
 
     cd ..
-    echo "${MESSAGES[success]}"
+    echo -e "\n${MESSAGES[success]}"
 }
 
 # Main
