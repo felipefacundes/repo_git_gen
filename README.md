@@ -17,7 +17,7 @@ This repository contains a powerful shell script designed to simplify the creati
    ```
 2. Navigate to the script directory:
    ```bash
-   cd shell_utils
+   cd repo_git_gen
    ```
 3. Ensure the script is executable:
    ```bash
