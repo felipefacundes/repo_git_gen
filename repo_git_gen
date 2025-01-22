@@ -5,6 +5,8 @@
 config_file=~/.repo_git_gen.conf
 declare -A MESSAGES
 repo_name="$1"
+USERNAME=''
+EMAIL=''
 
 # Message configuration: Portuguese - French - German - Romanian - English
 if [[ "${LANG,,}" =~ pt_ ]]; then
@@ -95,8 +97,6 @@ check_authentication() {
 
 # Ensures the existence and completion of the configuration file
 setup_config() {
-    local USERNAME
-    local EMAIL
 
     if [[ ! -f "$config_file" ]]; then
         echo "${MESSAGES[config_creating]}"
