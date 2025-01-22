@@ -12,7 +12,7 @@ EMAIL=''
 if [[ "${LANG,,}" =~ pt_ ]]; then
     MESSAGES=(
         [description_prompt]="Insira uma descrição (ou pressione Enter para usar 'first commit'):"
-        [length_error]="Erro: A descrição deve ter no máximo 50 caracteres."
+        [length_error]="Erro: A descrição deve ter no máximo 70 caracteres."
         [character_error]="Erro: A descrição contém caracteres não suportados (somente latinos básicos, números e pontuações são permitidos)."
         [gh_missing]="GitHub CLI (gh) não está instalado. Instale-o antes de continuar."
         [git_missing]="Git não está instalado. Instale-o antes de continuar."
@@ -25,7 +25,7 @@ if [[ "${LANG,,}" =~ pt_ ]]; then
 elif [[ "${LANG,,}" =~ fr_ ]]; then
     MESSAGES=(
         [description_prompt]="Entrez une description (ou appuyez sur Entrée pour utiliser 'premier commit'):"
-        [length_error]="Erreur : La description doit contenir au maximum 50 caractères."
+        [length_error]="Erreur : La description doit contenir au maximum 70 caractères."
         [character_error]="Erreur : La description contient des caractères non pris en charge (seuls les caractères latins de base, les chiffres et la ponctuation sont autorisés)."
         [gh_missing]="GitHub CLI (gh) n'est pas installé. Veuillez l'installer avant de continuer."
         [git_missing]="Git n'est pas installé. Veuillez l'installer avant de continuer."
@@ -38,7 +38,7 @@ elif [[ "${LANG,,}" =~ fr_ ]]; then
 elif [[ "${LANG,,}" =~ de_ ]]; then
     MESSAGES=(
         [description_prompt]="Geben Sie eine Beschreibung ein (oder drücken Sie Enter, um 'erster Commit' zu verwenden):"
-        [length_error]="Fehler: Die Beschreibung darf höchstens 50 Zeichen lang sein."
+        [length_error]="Fehler: Die Beschreibung darf höchstens 70 Zeichen lang sein."
         [character_error]="Fehler: Die Beschreibung enthält nicht unterstützte Zeichen (nur einfache lateinische Buchstaben, Zahlen und Satzzeichen sind erlaubt)."
         [gh_missing]="GitHub CLI (gh) ist nicht installiert. Bitte installieren Sie es, bevor Sie fortfahren."
         [git_missing]="Git ist nicht installiert. Bitte installieren Sie es, bevor Sie fortfahren."
@@ -51,7 +51,7 @@ elif [[ "${LANG,,}" =~ de_ ]]; then
 elif [[ "${LANG,,}" =~ ro_ ]]; then
     MESSAGES=(
         [description_prompt]="Introduceți o descriere (sau apăsați Enter pentru a utiliza 'primul commit'):"
-        [length_error]="Eroare: Descrierea trebuie să aibă cel mult 50 de caractere."
+        [length_error]="Eroare: Descrierea trebuie să aibă cel mult 70 de caractere."
         [character_error]="Eroare: Descrierea conține caractere neacceptate (sunt permise doar caractere latine de bază, cifre și punctuație)."
         [gh_missing]="GitHub CLI (gh) nu este instalat. Vă rugăm să îl instalați înainte de a continua."
         [git_missing]="Git nu este instalat. Vă rugăm să îl instalați înainte de a continua."
@@ -64,7 +64,7 @@ elif [[ "${LANG,,}" =~ ro_ ]]; then
 else
     MESSAGES=(
         [description_prompt]="Enter a description (or press Enter to use 'first commit'):"
-        [length_error]="Error: The description must be at most 50 characters."
+        [length_error]="Error: The description must be at most 70 characters."
         [character_error]="Error: The description contains unsupported characters (only basic Latin, numbers, and punctuation are allowed)."
         [gh_missing]="GitHub CLI (gh) is not installed. Please install it before continuing."
         [git_missing]="Git is not installed. Please install it before continuing."
@@ -126,8 +126,8 @@ validate_description() {
         read -rp "${MESSAGES[description_prompt]} " description
         description="${description:-"first commit"}"
 
-        # Check if the description has a maximum of 50 characters
-        if (( ${#description} > 50 )); then
+        # Check if the description has a maximum of 70 characters
+        if (( ${#description} > 70 )); then
             echo "${MESSAGES[length_error]}"
             description=""
             continue
