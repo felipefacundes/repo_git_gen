@@ -2,6 +2,27 @@
 # License: GPLv3
 # Credits: Felipe Facundes
 
+: <<'DOCUMENTATION'
+Capabilities:
+
+- Multilingual support (Portuguese, French, German, Romanian, English)
+- Automatic dependency checks (Git and GitHub CLI)
+- GitHub authentication process
+- Automatic Git user data configuration
+- Commit description validation:
+
+- 70-character maximum
+- Only Latin characters, numbers, and punctuation allowed
+
+- Automated repository creation
+- Git initialization, initial commit, and GitHub push
+- Public repository creation
+- Localized error handling
+- Guided initial configuration with configuration file creation
+
+Primary functionality: Automate GitHub repository creation and publication with custom validations and configurations.
+DOCUMENTATION
+
 config_file=~/.repo_git_gen.conf
 declare -A MESSAGES
 repo_name="$1"
